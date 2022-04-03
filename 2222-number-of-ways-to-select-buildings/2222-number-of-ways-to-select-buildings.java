@@ -17,24 +17,17 @@ class Solution {
             }
         }
         
-        // for(int i=0;i<s.length();i++){
-        //     System.out.println(i+" "+zpre[i]+" "+opre[i]);
-        // }
         long ans=0;
         int zr=0,or=0;
         for(int i=s.length()-1;i>=0;i--){
-            long count=0;
             if(s.charAt(i)=='0'){
-                count+=(long)or*(long)opre[i];
+                ans+=(long)or*(long)opre[i];
                 zr++;
             }
             else{
-                count+=(long)zr*(long)zpre[i];
+                ans+=(long)zr*(long)zpre[i];
                 or++;
             }
-            // System.out.println(i+" "+count);
-            ans+=count;
-            
         }
         return ans;
     }
