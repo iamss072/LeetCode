@@ -15,14 +15,10 @@
  */
 class Solution {
     public TreeNode trimBST(TreeNode root, int low, int high) {
-        return solve(root,low,high);
-    }
-    private TreeNode solve(TreeNode root,int low,int high){
-        
         if(root==null) return root;
         
-        root.left=solve(root.left,low,high);
-        root.right=solve(root.right,low,high);
+        root.left=trimBST(root.left,low,high);
+        root.right=trimBST(root.right,low,high);
         
         if(root.val<low){
             return root.right;
