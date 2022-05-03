@@ -31,16 +31,14 @@ class Solution {
         }
         return count;
     }
-    private int traverse(int[][] vis,int[] dir,int r,int c){
-        int count=0;
+    private void traverse(int[][] vis,int[] dir,int r,int c){
         
         while(r>=0 && c>=0 && r<vis.length && c<vis[0].length && (vis[r][c]==0 || vis[r][c]==-1)){
-            count++;
+
             vis[r][c]=-1;
             r=r+dir[0];
             c=c+dir[1];
         }
         
-        return count;
     }
 }
